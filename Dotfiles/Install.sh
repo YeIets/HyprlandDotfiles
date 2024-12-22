@@ -1,4 +1,4 @@
-#!/usr/bin/zsh
+#!/usr/bin/bash
 clear
 
 repo="https://github.com/YeIets/Dotfiles"
