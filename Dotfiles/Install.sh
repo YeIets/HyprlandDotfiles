@@ -44,8 +44,6 @@ _installPackages(){
 	printf "Packages not installed: %s \n" "${toInstall[@]}";
 	printf "Proceeding to install %s . . . \n" "${toInstall[@]}" ;
     sudo pacman -S "${toInstall[@]}";
-
-
 }
 
 
@@ -113,18 +111,6 @@ Packages=("hyprland"
 		  "gammastep"
 		  "swaync"
 		  "btop"
-
 		  )
 
-#name="hyprland"
-
-
-#echo $(_isInstalled $name)
-
 _installPackages "${Packages[@]}"
-
-#if [[ $( _isInstalled $name ) == 0 ]]; then
-#	echo "$name is installed"
-#else
-#	echo "$name not installed"
-#fi
