@@ -99,11 +99,11 @@ while true; do
 done
 
 
-pwd
+#pwd
 
-_getDotfiles "${repo}"
+#_getDotfiles "${repo}"
 
-pwd
+#pwd
 
 Packages=("hyprland"
 		  "neofetch"
@@ -114,7 +114,7 @@ Packages=("hyprland"
 
 
 #echo $(_isInstalled $name)
-#_installPackages "${Packages[@]}"
+_installPackages "${Packages[@]}"
 
 #if [[ $( _isInstalled $name ) == 0 ]]; then
 #	echo "$name is installed"
