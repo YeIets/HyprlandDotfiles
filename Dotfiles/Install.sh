@@ -114,6 +114,7 @@ Packages=("hyprland"
 
 
 #echo $(_isInstalled $name)
+
 _installPackages "${Packages[@]}"
 
 #if [[ $( _isInstalled $name ) == 0 ]]; then
