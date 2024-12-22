@@ -1,15 +1,7 @@
 #!/usr/bin/bash
 clear
 
-repo="https://github.com/YeIets/Dotfiles"
 userPath="$HOME"
-
-
-_getDotfiles(){
-	cd
-	git clone "${repo}"
-	cd Dotfiles/
-}
 
 #Cheeck if package is installed
 #Returns 0 if the package passed IS found or 1 if IS NOT found
@@ -98,16 +90,30 @@ while true; do
     esac
 done
 
-
-#pwd
-
-#_getDotfiles "${repo}"
-
-#pwd
-
 Packages=("hyprland"
-		  "neofetch"
-		  "htop"
+		  "hyprlock"
+		  "hypridl"
+		  "wpaperd"
+		  "xdg-desktop-portal-hyprland"
+		  "brightnessctl"
+		  "kitty"
+		  "alacritty"
+		  "rofi-wayland"
+		  "libadwaita"
+		  "lxappearence"
+		  "ly"
+		  "file-roller"
+		  "thunar"
+		  "thunar-archive"
+		  "vivaldi"
+		  "waybar"
+		  "pavucontrol"
+		  "bluez"
+		  "networkmanager"
+		  "gammastep"
+		  "swaync"
+		  "btop"
+
 		  )
 
 #name="hyprland"

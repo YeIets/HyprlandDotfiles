@@ -2,7 +2,6 @@
 
 #waybar
 #pavucontrol
-#bluetuith
 #bluez
 #networkmanager
 #gammastep
@@ -12,11 +11,13 @@
 #hyprpaper
 #pulsemixer
 #swaync
-#rofi
+#rofi-wayland
 #thunar
-#
-#
+#xdg-desktop-portal-hyprland
+#brightnessctl
 
+#YAY required
+#bluetuith
 
 #Optional
 #Btop
