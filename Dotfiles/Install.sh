@@ -105,10 +105,10 @@ _getDotfiles "${repo}"
 
 pwd
 
-#Packages=("hyprland"
-#		  "neofetch"
-#		  "htop"
-#		  )
+Packages=("hyprland"
+		  "neofetch"
+		  "htop"
+		  )
 
 #name="hyprland"
 
