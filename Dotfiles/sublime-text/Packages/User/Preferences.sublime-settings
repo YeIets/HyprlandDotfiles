@@ -1,0 +1,10 @@
+{
+	"ignored_packages":
+	[
+		"Vintage",
+	],
+	"theme": "Devastate.sublime-theme",
+	"index_files": true,
+	"color_scheme": "Packages/Theme - Cyanide/Twilightcyanide - Black.tmTheme",
+	"font_size": 13,
+}

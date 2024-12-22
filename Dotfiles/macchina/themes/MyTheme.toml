@@ -1,0 +1,32 @@
+# MyTheme
+
+spacing         = 0
+hide_ascii      = false
+key_color       = "#E53935"
+separator       = "→ "
+separator_color = "#E53935"
+padding 	= 0
+
+[palette]
+glyph           = "○    "
+visible         = true
+
+[bar]
+glyph           = "○"
+hide_delimiters = true
+visible         = false
+
+[box.inner_margin]
+x               = 0
+y               = 0
+
+[custom_ascii]
+
+# red  "#E53935"
+color           = "#FBFF00"
+path 		= "~/.config/macchina/themes/berserk.txt"
+bold 		= true
+
+[keys]
+host = "HOST"
+kernel = "KERNEL"

@@ -1,0 +1,23 @@
+#List of all dependencies for this rice
+
+#waybar
+#pavucontrol
+#bluetuith
+#bluez
+#networkmanager
+#gammastep
+#alacritty
+#hyprland
+#hyprlock
+#hyprpaper
+#pulsemixer
+#swaync
+#rofi
+#thunar
+#
+#
+
+
+#Optional
+#Btop
+#cava

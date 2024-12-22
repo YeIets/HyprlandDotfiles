@@ -1,0 +1,16 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"ayu",
+		"Catppuccin color schemes",
+		"Devastate",
+		"FileIcons",
+		"Package Control",
+		"Theme - Bamboo",
+		"Theme - Cyanide",
+	],
+}
