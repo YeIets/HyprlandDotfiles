@@ -2,7 +2,7 @@
 clear
 
 configDir="$HOME/.config/"
-directories="$HOME/GitHub/HyprlandDotfiles/Dotfiles/Config/"
+directories="$HOME/HyprlandDotfiles/Dotfiles/Config/"
 
 #Cheeck if package is installed
 #Returns 0 if the package passed IS found or 1 if IS NOT found
