@@ -212,6 +212,7 @@ Packages=("hyprland"
 		  "wget"
 		  "zip"
 		  "unzip"
+		  "bat"
 )
 
 

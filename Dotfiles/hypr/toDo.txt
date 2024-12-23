@@ -1,0 +1,6 @@
+*Install yay
+
+*Install bluetuith with yay
+
+*Check the waybar config files
+*Bluetuii

@@ -33,9 +33,9 @@
     // Modules Left
     "modules-left": [
         "pulseaudio",
-        "clock",
-        "battery",
-        "backlight",
+        "clock"
+        //"battery", enable this for battery showing in laptop
+        //"backlight", enable this for brightness showing in laptop
     ],
 
     // Modules Center
