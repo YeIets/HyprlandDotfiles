@@ -89,7 +89,7 @@ _createDirectories(){
 	echo "Config directories not found for: ${toCopy[@]} ";
 
 	echo -e "${GREEN}"
-	echo "Proceeding to create config directories for: ${toCopy[@]} . . . \n";
+	echo "Proceeding to create config directories for: ${toCopy[@]} . . .";
 
 	echo -e "${WHITE}"
 
