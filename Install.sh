@@ -101,7 +101,7 @@ _createDirectories(){
 #Copy dotfiles from cloned repo to .config user's folder
 _copyFiles(){
 	for item in "${Directories[@]}"; do
-		cp -f "${dirsPath}""$item"/* "$configDir""$item"
+		cp -rf "${dirsPath}""$item"/* "$configDir""$item"
 	done
 }
 
