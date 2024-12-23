@@ -159,7 +159,7 @@ done
 
 Packages=("hyprland"
 		  "hyprlock"
-		  "hypridl"
+		  "hypridle"
 		  "wpaperd"
 		  "xdg-desktop-portal-hyprland"
 		  "brightnessctl"
@@ -180,12 +180,12 @@ Packages=("hyprland"
 		  "gammastep"
 		  "swaync"
 		  "btop"
+		  "gum"
 )
 
 
 Directories=("alacritty"
              "gammastep"
-             "hypr"
              "hypr"
              "macchina"
              "pavucontrol"
