@@ -47,6 +47,56 @@ _installPackages(){
 }
 
 
+
+_isCreated(){
+
+	package="$1";
+	condition="$(ls $HOME/.config/ | grep $pkg)";
+
+	if [[ -n "$condition" ]]; then
+		#Config directory for the package Is found
+		echo 0;
+		return;
+	fi;
+	#Directory Not Found
+	echo 1;
+	return;	
+}
+
+
+_copyDirectories(){
+
+	toCopy=();
+
+	for pkg; do
+		if [[ $( _isCreated ${pkg} ) == 0 ]]; then
+			#echo " ${pkg} already installed ";
+			continue;
+		fi;
+		toCopy+=("${pkg}");
+	done;
+
+	if [[ "${toCopy[@]}" == "" ]]; then
+		echo "All directories exist";
+		return;
+	fi;
+
+	printf "Packages not installed: %s \n" "${toCopy[@]}";
+	printf "Proceeding to install %s . . . \n" "${toCopy[@]}" ;
+    
+}
+
+
+	if [[ "{toCopy[@]}" == "" ]]; then
+		echo "All directories exist";
+		return;
+	fi
+
+	echo "${toCopy[@]}"
+}
+
+
+
 #COLORS
 
 RED='\e[31m'
@@ -113,4 +163,13 @@ Packages=("hyprland"
 		  "btop"
 		  )
 
+
+#Synchronize package database
+sudo pacman -Syu
+echo
+
+#Check and install all the packages
 _installPackages "${Packages[@]}"
+echo
+
+
