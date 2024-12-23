@@ -2,7 +2,7 @@
 clear
 
 configDir="$HOME/.config/"
-directories="$HOME/HyprlandDotfiles/Dotfiles/Config/"
+dirsPath="$HOME/HyprlandDotfiles/Dotfiles/"
 
 #Cheeck if package is installed
 #Returns 0 if the package passed IS found or 1 if IS NOT found
@@ -90,9 +90,10 @@ _createDirectories(){
 	done
 }
 
+#Moves dotfiles from repo to .config user's folder
 _moveFiles(){
 	for item in "${Directories[@]}"; do
-		mv "${dirs}""$item"/* "{$configDir}"
+		mv "${dirsPath}""$item"/* "$configDir""$item"
 	done
 }
 
@@ -150,7 +151,7 @@ Packages=("hyprland"
 		  "ly"
 		  "file-roller"
 		  "thunar"
-		  "thunar-archive"
+		  "thunar-archive-plugin"
 		  "vivaldi"
 		  "waybar"
 		  "pavucontrol"

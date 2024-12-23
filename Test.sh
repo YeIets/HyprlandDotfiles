@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 configDir="$HOME/.config/"
-dirs="$HOME/GitHub/HyprlandDotfiles/Dotfiles/Config/"
+dirs="$HOME/HyprlandDotfiles/Dotfiles/"
 
 _isCreated(){
 
