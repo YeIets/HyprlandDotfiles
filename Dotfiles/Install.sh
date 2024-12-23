@@ -90,8 +90,6 @@ _createDirectories(){
 	for item in "${toCopy[@]}"; do
 		mkdir "${configDir}""$item"
 	done
-
-
 }
 
 
