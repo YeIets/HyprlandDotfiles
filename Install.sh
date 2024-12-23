@@ -100,10 +100,9 @@ _moveFiles(){
 #Enables and starts services trhough systemctl 
 _startServices(){
 
-	echo -e "${GREEN}"
-	
 	for item in "${Services[@]}"; do
 
+		echo -e "${GREEN}"
 		echo "Enabling and starting $item service"
 
 		sudo systemctl enable "$item"".service";
