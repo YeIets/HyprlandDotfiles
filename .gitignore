@@ -1,1 +1,1 @@
-Test.sh
+git rm --cached Test.sh
