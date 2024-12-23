@@ -97,6 +97,24 @@ _moveFiles(){
 	done
 }
 
+#Enables and starts services trhough systemctl 
+_startServices()
+
+	echo -e "${GREEN}"
+	
+	for item in "${Services[@]}"; do
+
+		echo "Enabling and starting $item service"
+
+		sudo systemctl enable "$item"".service";
+		sudo systemctl start "$item"".service";
+	done;
+
+	echo -e "${WHITE}"
+}
+
+
+
 #COLORS
 
 RED='\e[31m'
@@ -178,6 +196,11 @@ Directories=("alacritty"
              "wpaperd"
 )
 
+Services=("ly"
+		  "NetworkManager"
+		  "bluetooth"
+)
+
 #Synchronize package database
 sudo pacman -Syu
 echo
@@ -192,3 +215,50 @@ echo
 
 #Move config files to .config folder
 _moveFiles "${Directories[@]}"
+
+#
+echo -e "${RED}"
+echo "Do you want to enable and start the services yourself or let the script do it? "
+echo -e "${WHITE}"
+
+decision=(gum choose "YES, let the script do it" "NO, I'll do it myself")
+
+if [[ "$decision" == "YES, let the script do it" ]]; then
+
+	_startServices
+
+elif [ "$decision" == "NO, I'll do it myself" ]; then
+    	echo -e "${GREEN}"
+		echo "Finalizing setup"
+		echo -e "${WHITE}"
+else
+	echo -e "${RED}"
+	echo ":: Setup Canceled"
+	exit 130
+fi
+
+#END
+echo -e "${GREEN}"
+cat	<<"EOF"
+  ______  __    __   ______  ________   ______   __         ______  ________  ______   ______   __    __ 
+|      \|  \  |  \ /      \|        \ /      \ |  \       /      \|        \|      \ /      \ |  \  |  \
+ \$$$$$$| $$\ | $$|  $$$$$$\\$$$$$$$$|  $$$$$$\| $$      |  $$$$$$\\$$$$$$$$ \$$$$$$|  $$$$$$\| $$\ | $$
+  | $$  | $$$\| $$| $$___\$$  | $$   | $$__| $$| $$      | $$__| $$  | $$     | $$  | $$  | $$| $$$\| $$
+  | $$  | $$$$\ $$ \$$    \   | $$   | $$    $$| $$      | $$    $$  | $$     | $$  | $$  | $$| $$$$\ $$
+  | $$  | $$\$$ $$ _\$$$$$$\  | $$   | $$$$$$$$| $$      | $$$$$$$$  | $$     | $$  | $$  | $$| $$\$$ $$
+ _| $$_ | $$ \$$$$|  \__| $$  | $$   | $$  | $$| $$_____ | $$  | $$  | $$    _| $$_ | $$__/ $$| $$ \$$$$
+|   $$ \| $$  \$$$ \$$    $$  | $$   | $$  | $$| $$     \| $$  | $$  | $$   |   $$ \ \$$    $$| $$  \$$$
+ \$$$$$$ \$$   \$$  \$$$$$$    \$$    \$$   \$$ \$$$$$$$$ \$$   \$$   \$$    \$$$$$$  \$$$$$$  \$$   \$$
+                                                                                                        
+  ______    ______   __       __  _______   __        ________  ________  ________                      
+ /      \  /      \ |  \     /  \|       \ |  \      |        \|        \|        \                     
+|  $$$$$$\|  $$$$$$\| $$\   /  $$| $$$$$$$\| $$      | $$$$$$$$ \$$$$$$$$| $$$$$$$$                     
+| $$   \$$| $$  | $$| $$$\ /  $$$| $$__/ $$| $$      | $$__       | $$   | $$__                         
+| $$      | $$  | $$| $$$$\  $$$$| $$    $$| $$      | $$  \      | $$   | $$  \                        
+| $$   __ | $$  | $$| $$\$$ $$ $$| $$$$$$$ | $$      | $$$$$      | $$   | $$$$$                        
+| $$__/  \| $$__/ $$| $$ \$$$| $$| $$      | $$_____ | $$_____    | $$   | $$_____                      
+ \$$    $$ \$$    $$| $$  \$ | $$| $$      | $$     \| $$     \   | $$   | $$     \                     
+  \$$$$$$   \$$$$$$  \$$      \$$ \$$       \$$$$$$$$ \$$$$$$$$    \$$    \$$$$$$$$                     
+EOF
+
+echo "You may now log out with 'hyprctl dispatch exit' "
