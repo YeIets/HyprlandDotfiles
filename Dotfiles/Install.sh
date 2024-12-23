@@ -2,6 +2,9 @@
 clear
 
 userPath="$HOME"
+configDir="$HOME/.config/"
+directories="$HOME/GitHub/HyprlandDotfiles/Dotfiles/Config/"
+
 
 #Cheeck if package is installed
 #Returns 0 if the package passed IS found or 1 if IS NOT found
@@ -47,11 +50,11 @@ _installPackages(){
 }
 
 
-
+#Checks if a config directory exist inside of .config
 _isCreated(){
 
 	package="$1";
-	condition="$(ls $HOME/.config/ | grep $pkg)";
+	condition="$(ls $configDir | grep $pkg)";
 
 	if [[ -n "$condition" ]]; then
 		#Config directory for the package Is found
@@ -63,8 +66,8 @@ _isCreated(){
 	return;	
 }
 
-
-_copyDirectories(){
+#Checks if all the directories exist in .config and creates the ones that doesnt
+_createDirectories(){
 
 	toCopy=();
 
@@ -83,7 +86,14 @@ _copyDirectories(){
 
 	printf "Config directories not found for: %s \n" "${toCopy[@]}";
 	printf "Proceeding to create config directories for: %s . . . \n" "${toCopy[@]}" ;
+
+	for item in "${toCopy[@]}"; do
+		mkdir "${configDir}""$item"
+	done
+
+
 }
+
 
 #COLORS
 
@@ -175,5 +185,5 @@ _installPackages "${Packages[@]}"
 echo
 
 #Check for config directories and create them if they dont exist
-_copyDirectories "${Directories[@]}"
+_createDirectories "${Directories[@]}"
 

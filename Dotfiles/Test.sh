@@ -1,6 +1,7 @@
 #!/usr/bin/bash
 
-configDir="$HOME/.config"
+configDir="$HOME/.config/"
+directories="$HOME/GitHub/HyprlandDotfiles/Dotfiles/Config/"
 
 _isCreated(){
 
@@ -18,7 +19,7 @@ _isCreated(){
 }
 
 
-_copyDirectories(){
+_createDirectories(){
 
 	toCopy=();
 
@@ -38,7 +39,9 @@ _copyDirectories(){
 	printf "Config directories not found for: %s \n" "${toCopy[@]}";
 	printf "Proceeding to create config directories for: %s . . . \n" "${toCopy[@]}" ;
 
-	
+	for item in "${toCopy[@]}"; do
+		mkdir "${configDir}""$item"
+	done
 
 
 }
