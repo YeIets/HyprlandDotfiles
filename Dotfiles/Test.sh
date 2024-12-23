@@ -1,12 +1,11 @@
 #!/usr/bin/bash
 
-
-
+configDir="$HOME/.config"
 
 _isCreated(){
 
 	package="$1";
-	condition="$(ls $HOME/.config/ | grep $pkg)";
+	condition="$(ls $configDir | grep $pkg)";
 
 	if [[ -n "$condition" ]]; then
 		#Config directory for the package Is found
@@ -38,6 +37,9 @@ _copyDirectories(){
 
 	printf "Config directories not found for: %s \n" "${toCopy[@]}";
 	printf "Proceeding to create config directories for: %s . . . \n" "${toCopy[@]}" ;
+
+	
+
 
 }
 
@@ -78,6 +80,8 @@ Directories=("alacritty"
              "swaync"
              "waybar"
              "wpaperd"
+			 "asdasda"
+			 "bsdasd"
 )
 
 
