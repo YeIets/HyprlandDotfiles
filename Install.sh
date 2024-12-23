@@ -249,8 +249,6 @@ echo
 _createDirectories "${Directories[@]}"
 echo
 
-
-
 #Asking for confirmation to copy files
 echo -e "${RED}"
 echo "The script will copy the config files to your .config directory, IT WILL NOT CREATE A BACKUP"
