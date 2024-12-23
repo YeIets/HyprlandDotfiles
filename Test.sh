@@ -1,26 +1,22 @@
 #!/usr/bin/bash
 
-#Enables and starts services trhough systemctl 
-_startServices(){
-	for item in "${Services[@]}"; do
+#
+echo -e "${RED}"
+echo "Do you want to enable and start the services yourself or let the script do it? "
+echo -e "${WHITE}"
 
-		echo -e "${GREEN}"
-		echo "Enabling and starting $item service"
+decision=$(gum choose "YES, let the script do it" "NO, I'll do it myself")
 
-	done;
+if [[ "$decision" == "YES, let the script do it" ]]; then
 
-	echo -e "${WHITE}"
-}
+	_startServices
 
-RED='\e[31m'
-WHITE='\e[0m'
-GREEN='\e[32m'
-BLUE='\e[34m'
+elif [ "$decision" == "NO, I'll do it myself" ]; then
+    	echo -e "${GREEN}"
+		echo "Finalizing setup"
+else
+	echo -e "${RED}"
+	echo ":: Setup Canceled"
+	exit 130
+fi
 
-
-Services=("ly"
-		  "NetworkManager"
-		  "bluetooth"
-)
-
-_startServices

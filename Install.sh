@@ -78,12 +78,19 @@ _createDirectories(){
 	done;
 
 	if [[ "${toCopy[@]}" == "" ]]; then
+
+		echo -e "${GREEN}"
 		echo "All directories exist";
 		return;
 	fi;
 
-	printf "Config directories not found for: %s \n" "${toCopy[@]}";
-	printf "Proceeding to create config directories for: %s . . . \n" "${toCopy[@]}" ;
+	echo -e "${RED}"
+	echo "Config directories not found for: ${toCopy[@]} ";
+
+	echo -e "${GREEN}"
+	echo "Proceeding to create config directories for: ${toCopy[@]} . . . \n";
+
+	echo -e "${WHITE}"
 
 	for item in "${toCopy[@]}"; do
 		mkdir "${configDir}""$item"
@@ -221,7 +228,7 @@ echo -e "${RED}"
 echo "Do you want to enable and start the services yourself or let the script do it? "
 echo -e "${WHITE}"
 
-decision=(gum choose "YES, let the script do it" "NO, I'll do it myself")
+decision=$(gum choose "YES, let the script do it" "NO, I'll do it myself")
 
 if [[ "$decision" == "YES, let the script do it" ]]; then
 
