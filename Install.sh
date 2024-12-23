@@ -98,7 +98,7 @@ _moveFiles(){
 }
 
 #Enables and starts services trhough systemctl 
-_startServices()
+_startServices(){
 
 	echo -e "${GREEN}"
 	
