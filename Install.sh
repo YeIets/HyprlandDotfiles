@@ -319,3 +319,4 @@ EOF
 echo
 echo -e "${RED}"
 echo "You may now log out with 'hyprctl dispatch exit' "
+echo -e "${WHITE}"
