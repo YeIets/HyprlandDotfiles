@@ -4,6 +4,7 @@ clear
 configDir="$HOME/.config/"
 dirsPath="$HOME/HyprlandDotfiles/Dotfiles/"
 fontURL="https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/Agave.zip"
+yayURL="https://aur.archlinux.org/yay.git"
 
 #Cheeck if package is installed
 #Returns 0 if the package passed IS found or 1 if IS NOT found
@@ -142,6 +143,11 @@ _installFont(){
 	fc-cache
 }
 
+_installYay(){
+	git clone $yayURL
+	cd yay/
+	makepkg -si
+}
 
 #COLORS
 
@@ -241,6 +247,9 @@ echo
 #Check and install all the packages
 _installPackages "${Packages[@]}"
 echo
+
+_installYay
+yay -S bluetuith --noconfirm
 
 #Installs AgaveNerdFont  // IS THE ONLY FONT USED IN THE WHOLE SYSTEM, YOU CAN CHANGE IT BY EDITING THE CONFIG FILE FOR EACH PACKAGE
 _installFont
