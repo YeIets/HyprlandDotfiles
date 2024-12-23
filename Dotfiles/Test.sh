@@ -38,7 +38,7 @@ _copyDirectories(){
 
 	printf "Config directories not found for: %s \n" "${toCopy[@]}";
 	printf "Proceeding to create config directories for: %s . . . \n" "${toCopy[@]}" ;
-    
+
 }
 
 Packages=("hyprland"

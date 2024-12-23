@@ -81,21 +81,9 @@ _copyDirectories(){
 		return;
 	fi;
 
-	printf "Packages not installed: %s \n" "${toCopy[@]}";
-	printf "Proceeding to install %s . . . \n" "${toCopy[@]}" ;
-    
+	printf "Config directories not found for: %s \n" "${toCopy[@]}";
+	printf "Proceeding to create config directories for: %s . . . \n" "${toCopy[@]}" ;
 }
-
-
-	if [[ "{toCopy[@]}" == "" ]]; then
-		echo "All directories exist";
-		return;
-	fi
-
-	echo "${toCopy[@]}"
-}
-
-
 
 #COLORS
 
@@ -161,8 +149,22 @@ Packages=("hyprland"
 		  "gammastep"
 		  "swaync"
 		  "btop"
-		  )
+)
 
+
+Directories=("alacritty"
+             "gammastep"
+             "hypr"
+             "hypr"
+             "macchina"
+             "pavucontrol"
+             "rofi"
+             "scripts"
+             "sublime-text"
+             "swaync"
+             "waybar"
+             "wpaperd"
+)
 
 #Synchronize package database
 sudo pacman -Syu
@@ -172,4 +174,6 @@ echo
 _installPackages "${Packages[@]}"
 echo
 
+#Check for config directories and create them if they dont exist
+_copyDirectories "${Directories[@]}"
 
