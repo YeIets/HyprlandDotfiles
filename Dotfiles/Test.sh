@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 configDir="$HOME/.config/"
-directories="$HOME/GitHub/HyprlandDotfiles/Dotfiles/Config/"
+dirs="$HOME/GitHub/HyprlandDotfiles/Dotfiles/Config/"
 
 _isCreated(){
 
@@ -42,9 +42,15 @@ _createDirectories(){
 	for item in "${toCopy[@]}"; do
 		mkdir "${configDir}""$item"
 	done
-
-
 }
+
+_moveFiles(){
+	for item in "${Directories[@]}"; do
+		mv "${dirs}""$item"/* "{$configDir}"
+	done
+}
+
+
 
 Packages=("hyprland"
 		  "hyprlock"
@@ -74,7 +80,6 @@ Packages=("hyprland"
 Directories=("alacritty"
              "gammastep"
              "hypr"
-             "hypr"
              "macchina"
              "pavucontrol"
              "rofi"
@@ -83,11 +88,12 @@ Directories=("alacritty"
              "swaync"
              "waybar"
              "wpaperd"
-			 "asdasda"
-			 "bsdasd"
 )
 
 
 
 
-_copyDirectories "${Directories[@]}"
+#_createDirectories "${Directories[@]}"
+
+echo "${Directories[0]}"
+mv "${dirs}""${Directories[0]}"/* "/home/dora/Desktop/tests/"

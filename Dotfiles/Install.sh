@@ -1,10 +1,8 @@
 #!/usr/bin/bash
 clear
 
-userPath="$HOME"
 configDir="$HOME/.config/"
 directories="$HOME/GitHub/HyprlandDotfiles/Dotfiles/Config/"
-
 
 #Cheeck if package is installed
 #Returns 0 if the package passed IS found or 1 if IS NOT found
@@ -92,6 +90,11 @@ _createDirectories(){
 	done
 }
 
+_moveFiles(){
+	for item in "${Directories[@]}"; do
+		mv "${dirs}""$item"/* "{$configDir}"
+	done
+}
 
 #COLORS
 
@@ -144,7 +147,6 @@ Packages=("hyprland"
 		  "alacritty"
 		  "rofi-wayland"
 		  "libadwaita"
-		  "lxappearence"
 		  "ly"
 		  "file-roller"
 		  "thunar"
@@ -184,4 +186,7 @@ echo
 
 #Check for config directories and create them if they dont exist
 _createDirectories "${Directories[@]}"
+echo
 
+#Move config files to .config folder
+_moveFiles "${Directories[@]}"
