@@ -1,5 +1,5 @@
-[eDP-1]
-path = "~/HyprlandDotfiles/Dotfiles/wpaperd/Wallpapers/Berserk1.jpg"
+[default]]
+path = "~/.config/wpaperd/Wallpapers/Berserk1.jpg"
 mode = "center"
 #duration = "30s"
 
