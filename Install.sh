@@ -120,6 +120,7 @@ _startServices()
 RED='\e[31m'
 WHITE='\e[0m'
 GREEN='\e[32m'
+BLUE='\e[34m'
 
 
 
@@ -261,4 +262,5 @@ cat	<<"EOF"
   \$$$$$$   \$$$$$$  \$$      \$$ \$$       \$$$$$$$$ \$$$$$$$$    \$$    \$$$$$$$$                     
 EOF
 
+echo "You may now log out with 'hyprctl dispatch exit' "
 echo "You may now log out with 'hyprctl dispatch exit' "
