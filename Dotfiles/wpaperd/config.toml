@@ -1,4 +1,4 @@
-[default]]
+[default]
 path = "~/.config/wpaperd/Wallpapers/Berserk1.jpg"
 mode = "center"
 #duration = "30s"
