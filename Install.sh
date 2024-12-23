@@ -3,6 +3,7 @@ clear
 
 configDir="$HOME/.config/"
 dirsPath="$HOME/HyprlandDotfiles/Dotfiles/"
+fontURL="https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/Agave.zip"
 
 #Cheeck if package is installed
 #Returns 0 if the package passed IS found or 1 if IS NOT found
@@ -97,10 +98,10 @@ _createDirectories(){
 	done
 }
 
-#Moves dotfiles from repo to .config user's folder
-_moveFiles(){
+#Copy dotfiles from cloned repo to .config user's folder
+_copyFiles(){
 	for item in "${Directories[@]}"; do
-		mv "${dirsPath}""$item"/* "$configDir""$item"
+		cp -f "${dirsPath}""$item"/* "$configDir""$item"
 	done
 }
 
@@ -119,6 +120,27 @@ _startServices(){
 	echo -e "${WHITE}"
 }
 
+_installFont(){
+	#Downloads AgaveNerdFont with wget	
+	wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/Agave.zip
+	condition="$(ls /usr/local/share | grep fonts )" #Checks if fonts folder exists
+
+	if [[ -n "$condition" ]]; then
+		#Unzips the fonts in the folder
+		echo "Fonts folder found"
+		sudo unzip Agave.zip -d /usr/local/share/fonts
+		rm Agave.zip
+		return;
+	fi;
+
+	#Creates the folder and unzips the fonts
+	echo "Fonts folder NOT found, creating font folder at /usr/local/share/"
+	sudo mkdir /usr/local/share/fonts
+	sudo unzip Agave.zip -d /usr/local/share/fonts
+	rm Agave.zip
+
+	fc-cache
+}
 
 
 #COLORS
@@ -187,6 +209,9 @@ Packages=("hyprland"
 		  "swaync"
 		  "btop"
 		  "gum"
+		  "wget"
+		  "zip"
+		  "unzip"
 )
 
 
@@ -216,14 +241,40 @@ echo
 _installPackages "${Packages[@]}"
 echo
 
+#Installs AgaveNerdFont  // IS THE ONLY FONT USED IN THE WHOLE SYSTEM, YOU CAN CHANGE IT BY EDITING THE CONFIG FILE FOR EACH PACKAGE
+_installFont
+echo
+
 #Check for config directories and create them if they dont exist
 _createDirectories "${Directories[@]}"
 echo
 
-#Move config files to .config folder
-_moveFiles "${Directories[@]}"
 
-#
+
+#Asking for confirmation to copy files
+echo -e "${RED}"
+echo "The script will copy the config files to your .config directory, IT WILL NOT CREATE A BACKUP"
+echo "Creating a backup of your .config files is recommended."
+echo -e "${WHITE}"
+
+decision=$(gum choose "YES, let the script do it" "NO, let me create my backup")
+
+if [[ "$decision" == "YES, let the script do it" ]]; then
+
+	_copyFiles
+
+elif [ "$decision" == "NO, let me create my backup" ]; then
+    	echo -e "${GREEN}"
+		echo "Finalizing setup"
+		echo -e "${WHITE}"
+else
+	echo -e "${RED}"
+	echo ":: Setup Canceled"
+	exit 130
+fi
+echo
+
+#Asking for confirmation to enable and start services
 echo -e "${RED}"
 echo "Do you want to enable and start the services yourself or let the script do it? "
 echo -e "${WHITE}"
@@ -267,6 +318,6 @@ cat	<<"EOF"
  \$$    $$ \$$    $$| $$  \$ | $$| $$      | $$     \| $$     \   | $$   | $$     \                     
   \$$$$$$   \$$$$$$  \$$      \$$ \$$       \$$$$$$$$ \$$$$$$$$    \$$    \$$$$$$$$                     
 EOF
-
-echo "You may now log out with 'hyprctl dispatch exit' "
+echo
+echo -e "${RED}"
 echo "You may now log out with 'hyprctl dispatch exit' "
