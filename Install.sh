@@ -260,11 +260,14 @@ decision=$(gum choose "YES, let the script do it" "NO, let me create my backup")
 if [[ "$decision" == "YES, let the script do it" ]]; then
 
 	_copyFiles
+	echo -e "${GREEN}"
+	echo "Config files copied succesfuly"
+	echo -e "${WHITE}"
 
 elif [ "$decision" == "NO, let me create my backup" ]; then
-    	echo -e "${GREEN}"
-		echo "Finalizing setup"
-		echo -e "${WHITE}"
+	echo -e "${GREEN}"
+	echo "Finalizing setup"
+	echo -e "${WHITE}"
 else
 	echo -e "${RED}"
 	echo ":: Setup Canceled"
