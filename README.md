@@ -8,6 +8,7 @@ It's pretty much themed black and white so almost any manga wallpaper or sum lik
 ![alt text](/Screenshots/Desktop-FloatNoti.png "Desktop Notification")
 ![alt text](/Screenshots/Desktop-Windows.png "Windows")
 ![alt text](/Screenshots/Desktop-NotiCenter.png "Notification Center")
+![alt text](/Screenshots/Lockscreen.png "Lockscreen")
 
 ## Installation
 
