@@ -1,20 +1,20 @@
 #List of all dependencies for this rice
 
-#waybar
-#pavucontrol
-#bluez
-#networkmanager
-#gammastep
 #alacritty
+#bluez
+#brightnessctl
+#gammastep
 #hyprland
 #hyprlock
-#hyprpaper
+#networkmanager
+#pavucontrol
 #pulsemixer
-#swaync
 #rofi-wayland
+#swaync
 #thunar
+#waybar
+#wpaperd
 #xdg-desktop-portal-hyprland
-#brightnessctl
 
 #YAY required
 #bluetuith
