@@ -223,6 +223,9 @@ Packages=("hyprland"
 		  "bat"
 )
 
+YayPackages=("Hyprshot"
+			 "bluetuith"
+)
 
 Directories=("alacritty"
              "gammastep"
