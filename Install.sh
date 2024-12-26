@@ -228,6 +228,7 @@ Packages=("hyprland"
 		  "zip"
 		  "unzip"
 		  "bat"
+		  "macchina"
 )
 
 YayPackages=("Hyprshot"
@@ -245,6 +246,7 @@ Directories=("alacritty"
              "swaync"
              "waybar"
              "wpaperd"
+			 "macchina"
 )
 
 Services=("ly"
