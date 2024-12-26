@@ -5,6 +5,7 @@ configDir="$HOME/.config/"
 dirsPath="$HOME/HyprlandDotfiles/Dotfiles/"
 fontURL="https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/Agave.zip"
 yayURL="https://aur.archlinux.org/yay.git"
+currentDir=$(pwd)
 
 #Cheeck if package is installed
 #Returns 0 if the package passed IS found or 1 if IS NOT found
@@ -140,7 +141,7 @@ _installFont(){
 	#Creates the folder and unzips the fonts
 	echo "Fonts folder NOT found, creating font folder at /usr/local/share/"
 	sudo mkdir /usr/local/share/fonts
-	sudo unzip Agave.zip -d /usr/local/share/fonts
+	sudo unzip $currentDir/Agave.zip -d /usr/local/share/fonts
 	rm Agave.zip
 
 	fc-cache
@@ -148,8 +149,14 @@ _installFont(){
 
 _installYay(){
 	git clone $yayURL
-	cd ~/HyprlandDotfiles/yay/
+	cd $currentDir/yay/
 	makepkg -si
+}
+
+_installPackagesYay(){
+	for item in "${YayPackages[@]}"; do
+		yay -S --noconfirm $item
+	done;
 }
 
 #COLORS
