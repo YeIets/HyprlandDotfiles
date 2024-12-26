@@ -197,7 +197,6 @@ Packages=("hyprland"
 		  "wpaperd"
 		  "xdg-desktop-portal-hyprland"
 		  "brightnessctl"
-		  "kitty"
 		  "alacritty"
 		  "rofi-wayland"
 		  "libadwaita"
@@ -332,4 +331,5 @@ EOF
 echo
 echo -e "${RED}"
 echo "You may now log out with 'hyprctl dispatch exit' "
+echo "Or start the greeter with systemctl enable --now ly.service"
 echo -e "${WHITE}"
