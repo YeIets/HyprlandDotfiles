@@ -30,7 +30,7 @@ slider {
 }
 
 .floating-notifications.background .notification-row .notification-background .notification {
-  padding: 7px;
+  padding: 8px;
   border-radius: 12.6px;
 }
 
@@ -39,19 +39,19 @@ slider {
 }
 
 .floating-notifications.background .notification-row .notification-background .notification .notification-content {
-  margin: 7px;
+  margin: 6px;
 }
 
 .floating-notifications.background .notification-row .notification-background .notification .notification-content .summary {
-  color: #cdd6f4;
+  color: #ffffff;
 }
 
 .floating-notifications.background .notification-row .notification-background .notification .notification-content .time {
-  color: #a6adc8;
+  color: #ffffff;
 }
 
 .floating-notifications.background .notification-row .notification-background .notification .notification-content .body {
-  color: #cdd6f4;
+  color: #ffffff;
 }
 
 .floating-notifications.background .notification-row .notification-background .notification > *:last-child > * {
@@ -82,18 +82,18 @@ slider {
   margin: 7px;
   padding: 2px;
   border-radius: 6.3px;
-  color: #1e1e2e;
-  background-color: #f38ba8;
+  color: #000000;
+  background-color: #ffffff;
 }
 
 .floating-notifications.background .notification-row .notification-background .close-button:hover {
-  background-color: #eba0ac;
-  color: #1e1e2e;
+  background-color: #000000;
+  color: #ffffff;
 }
 
 .floating-notifications.background .notification-row .notification-background .close-button:active {
-  background-color: #f38ba8;
-  color: #1e1e2e;
+  background-color: #000000;
+  color: #ffffff;
 }
 
 .control-center {
@@ -365,12 +365,6 @@ slider {
 .widget-mpris-subtitle {
   font-size: 1.1rem;
 }
-
-
-
-
-
-
 
 .image {
   padding-right: 0.5rem;

@@ -2,4 +2,5 @@
 path = "~/.config/wpaperd/Wallpapers/Berserk1.jpg"
 mode = "center"
 #duration = "30s"
-
+#Uncomment duration and update the path so it point to a folder with Wallpapers
+#And wpaperd will cycle through your wallpapers every each "duration"
