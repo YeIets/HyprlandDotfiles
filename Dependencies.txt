@@ -18,6 +18,7 @@
 
 #YAY required
 #bluetuith
+#hyprshot
 
 #Optional
 #Btop
