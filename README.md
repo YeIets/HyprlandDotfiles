@@ -87,3 +87,4 @@ You can follow the same steps for the Minimal Archinstall, remember that THE SCR
 
 - The script should work but it may be prone to errors (I'll be working on them)
 - You can take a look to the script to see the full list of installed packages and remove or add some as you like.
+- It was also made for a laptop, your waybar may look a lil bit empty if your trying it on desktop, you can always use it as a blueprint and customize it to your liking.
