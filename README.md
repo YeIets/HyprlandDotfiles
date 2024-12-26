@@ -88,4 +88,9 @@ You can follow the same steps for the Minimal Archinstall, remember that THE SCR
 
 - The script should work but it may be prone to errors (I'll be working on them)
 - You can take a look to the script to see the full list of installed packages and remove or add some as you like.
-- It was also made for a laptop, your waybar may look a lil bit empty if your trying it on desktop, you can always use it as a blueprint and customize it to your liking.
+- The config was made for a laptop so your waybar may look a lil bit empty if your trying it on desktop, you can always use it as a blueprint and customize it to your liking.
+
+### Credits / Used Stuff
+- [Alacritty Catpuccin Theme](https://github.com/catppuccin/alacritty)
+- [Waybar Config Blueprint]() (If anyone knows the repo from Stephan Raabe me know so I can credit him )
+- [Rofi Config Blueprint](https://github.com/adi1090x/rofi)
