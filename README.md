@@ -93,5 +93,5 @@ You can follow the same steps for the Minimal Archinstall, remember that THE SCR
 
 ### Credits / Used Stuff
 - [Alacritty Catpuccin Theme](https://github.com/catppuccin/alacritty)
-- [Waybar Config Blueprint]() (If anyone knows the repo from Stephan Raabe me know so I can credit him )
+- [Waybar Config Blueprint]() (If anyone knows the repo from Stephan Raabe let me know so I can credit him )
 - [Rofi Config Blueprint](https://github.com/adi1090x/rofi)
