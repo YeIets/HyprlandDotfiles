@@ -3,6 +3,11 @@
 This is my first time ricing hyprland, has been a fun experience.
 It's pretty much themed black and white so almost any manga wallpaper or sum like that will fit pretty well. 
 
+## Screenshots
+
+![alt text](/Screenshots/Desktop-FloatNoti.png "Desktop Notification")
+![alt text](/Screenshots/Desktop-Windows.png "Windows")
+![alt text](/Screenshots/Desktop-NotiCenter.png "Notification Center")
 
 ## Installation
 
