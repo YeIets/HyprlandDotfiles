@@ -32,12 +32,6 @@ Clone this repository:
 git clone "https://github.com/YeIets/HyprlandDotfiles" 
 ```
 
-Then just simply run the ***Install.sh***.
-
-```
-./Path/To/Install.sh
-```
-
 Make sure you gave the file permissions before executing it or it'll throw a permission error. You can do it by:
 
 ```
@@ -49,6 +43,12 @@ You can check the permissions of the file with ls.
 
 ```
 ls -l #Lists the files in the current directory 
+```
+
+Then just simply run the ***Install.sh***.
+
+```
+./Path/To/Install.sh
 ```
 
 If everything goes well, you should then be seeing the ly greeter, just sign in and that's it.
