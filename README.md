@@ -38,7 +38,7 @@ Clone this repository:
 git clone "https://github.com/YeIets/HyprlandDotfiles" 
 ```
 
-Make sure you give the file permissions before executing it or it'll throw a permission error. You can do it by:
+Make sure you give the file permissions before executing it or it'll throw a permission error. You can do this with:
 
 ```
 #If you're in the same directory as the Install.sh
