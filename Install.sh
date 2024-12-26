@@ -115,6 +115,9 @@ _startServices(){
 		echo "Enabling and starting $item service"
 
 		sudo systemctl enable "$item"".service";
+		if [[ "$item" == ly ]]; then
+			:
+
 		sudo systemctl start "$item"".service";
 	done;
 
@@ -145,7 +148,7 @@ _installFont(){
 
 _installYay(){
 	git clone $yayURL
-	cd yay/
+	cd ~/HyprlandDotfiles/yay/
 	makepkg -si
 }
 
@@ -330,6 +333,5 @@ cat	<<"EOF"
 EOF
 echo
 echo -e "${RED}"
-echo "You may now log out with 'hyprctl dispatch exit' "
-echo "Or start the greeter with systemctl enable --now ly.service"
+echo "You may now start the greeter with systemctl enable --now ly.service"
 echo -e "${WHITE}"

@@ -74,14 +74,16 @@ You can follow the same steps for the Minimal Archinstall, remember that THE SCR
 | [Gammastep](https://gitlab.com/chinstrap/gammastep)                | Color temperature     |
 | [Hyprland](https://github.com/hyprwm/Hyprland)                     | Tiling compositor     |
 | [Hyprlock](https://github.com/hyprwm/hyprlock)                     | Lockscreen            |
+| [Ly](https://github.com/fairyglade/ly)                             | Greeter               |
+| [Macchina](https://github.com/Macchina-CLI/macchina)               | System information    |
 | [NetworkManager](https://github.com/NetworkManager/NetworkManager) | Network Manager (Duh) |
 | [Rofi Wayland](https://github.com/lbonn/rofi)                      | Application Launcher  |
 | [Swaync](https://github.com/ErikReider/SwayNotificationCenter)     | Notification Center   |
 | [Thunar](https://github.com/xfce-mirror/thunar)                    | File Manager          |
 | [Waybar](https://github.com/Alexays/Waybar)                        | Status Bar            |
 | [Wpaperd](https://github.com/danyspin97/wpaperd)                   | Wallpaper Daemon      |
-| [Ly](https://github.com/fairyglade/ly)                             | Greeter               |
-| [Macchina](https://github.com/Macchina-CLI/macchina)               | System information    |
+| [Yay](https://github.com/Jguer/yay)                                | AUR helper            |
+
 
 
 ### Notes
@@ -90,6 +92,7 @@ You can follow the same steps for the Minimal Archinstall, remember that THE SCR
 - You can take a look to the script to see the full list of installed packages and remove or add some as you like.
 - The config was made for a laptop so your waybar may look a lil bit empty if your trying it on desktop, you can always use it as a blueprint and customize it to your liking.
 - It creates a folder named **scripts** on the .config/ folder, if you have one with the same name there make sure to back it up if youre using **Install.sh**
+- I'll be troubleshooting some of the errors, so EXPECT ERRORS!
 
 ### Credits / Used Stuff
 - [Alacritty Catpuccin Theme](https://github.com/catppuccin/alacritty)
