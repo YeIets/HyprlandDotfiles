@@ -89,6 +89,7 @@ You can follow the same steps for the Minimal Archinstall, remember that THE SCR
 - The script should work but it may be prone to errors (I'll be working on them)
 - You can take a look to the script to see the full list of installed packages and remove or add some as you like.
 - The config was made for a laptop so your waybar may look a lil bit empty if your trying it on desktop, you can always use it as a blueprint and customize it to your liking.
+- It creates a folder named **scripts** on the .config/ folder, if you have one with the same name there make sure to back it up if youre using **Install.sh**
 
 ### Credits / Used Stuff
 - [Alacritty Catpuccin Theme](https://github.com/catppuccin/alacritty)
