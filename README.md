@@ -12,7 +12,8 @@ It's pretty much themed black and white so almost any manga wallpaper or sum lik
 ## Installation
 
 The installation script was made with the scenario of having a fresh archlinux minimal installation done, just clone the repo, execute the script and you're done.
-If you already have your configuration and just want to try it, i'll recommend just copying the config files to your directories cause **THE SCRIPT DOESN'T MAKE A BACKUP FOR YOUR CONFIGURATION**. I'll implement it as soon as I can, not really a rush but I'm still learning bash and stuff.
+If you already have your configuration and just want to try it, i'll recommend just copying the config files to your directories cause **THE SCRIPT DOESN'T MAKE A BACKUP FOR YOUR CONFIGURATION**. 
+I'll implement it as soon as I can, not really a rush but I'm still learning bash and stuff.
 It was also made for a laptop, your waybar may look a lil bit empty if your trying it on desktop, you can always use it as a blueprint and customize it to your liking.
 
 ### Installation (Minimal archinstall)
