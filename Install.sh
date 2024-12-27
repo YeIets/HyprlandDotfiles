@@ -3,7 +3,8 @@ clear
 
 configDir="$HOME/.config/"
 dirsPath="$HOME/HyprlandDotfiles/Dotfiles/"
-fontURL="https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/Agave.zip"
+font1URL="https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/Agave.zip"
+font2URL="https://github.com/googlefonts/noto-emoji/raw/main/fonts/NotoColorEmoji.ttf"
 yayURL="https://aur.archlinux.org/yay.git"
 currentDir=$(pwd)
 
@@ -127,7 +128,8 @@ _startServices(){
 
 _installFont(){
 	#Downloads AgaveNerdFont with wget	
-	wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/Agave.zip
+	wget $font1URL
+	wget $font2URL
 	condition="$(ls /usr/local/share | grep fonts )" #Checks if fonts folder exists
 
 	if [[ -n "$condition" ]]; then
@@ -141,9 +143,12 @@ _installFont(){
 	#Creates the folder and unzips the fonts
 	echo "Fonts folder NOT found, creating font folder at /usr/local/share/"
 	sudo mkdir /usr/local/share/fonts
+
+	#Moves Noto Font to Fonts
+	sudo mv $currentDir/NotoColorEmoji.ttf /usr/local/share/fonts
 	sudo unzip $currentDir/Agave.zip -d /usr/local/share/fonts
 	rm Agave.zip
-
+	
 	fc-cache
 }
 
@@ -233,6 +238,7 @@ Packages=("hyprland"
 
 YayPackages=("Hyprshot"
 			 "bluetuith"
+			 "rofimoji"
 )
 
 Directories=("alacritty"
