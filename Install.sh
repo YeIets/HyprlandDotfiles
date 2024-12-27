@@ -136,8 +136,8 @@ _installFont(){
 	if [[ -n "$condition" ]]; then
 		#Unzips the fonts in the folder
 		echo "Fonts folder found"
-		sudo unzip Agave.zip -d /usr/local/share/fonts
-		rm Agave.zip
+		sudo unzip $currentDir/Agave.zip -d /usr/local/share/fonts
+		rm $currentDir/Agave.zip
 		return;
 	fi;
 
@@ -253,7 +253,6 @@ Directories=("alacritty"
              "swaync"
              "waybar"
              "wpaperd"
-			 "macchina"
 )
 
 Services=("ly"
@@ -270,7 +269,7 @@ _installPackages "${Packages[@]}"
 echo
 
 _installYay
-yay -S bluetuith --noconfirm
+_installPackagesYay
 
 #Installs AgaveNerdFont  // IS THE ONLY FONT USED IN THE WHOLE SYSTEM, YOU CAN CHANGE IT BY EDITING THE CONFIG FILE FOR EACH PACKAGE
 _installFont

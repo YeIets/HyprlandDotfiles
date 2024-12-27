@@ -9,12 +9,13 @@
 
 /*****----- Configuration -----*****/
 configuration {
-	modi:                       "drun,run,filebrowser,window";
+	modi:                       "drun,run,filebrowser,window,emoji:rofimoji";
     show-icons:                 true;
     display-drun:               "";
     display-run:                "";
     display-filebrowser:        "";
     display-window:             "";
+    display-emoji:              "󰮯";
 	drun-display-format:        "{name}";
 	window-format:              "{w} · {c} · {t}";
 }
