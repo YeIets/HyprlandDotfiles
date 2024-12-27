@@ -119,8 +119,9 @@ _startServices(){
 		sudo systemctl enable "$item"".service";
 		if [[ "$item" == ly ]]; then
 			:
-
-		sudo systemctl start "$item"".service";
+		else
+			sudo systemctl start "$item"".service";
+		fi
 	done;
 
 	echo -e "${WHITE}"
@@ -148,7 +149,7 @@ _installFont(){
 	sudo mv $currentDir/NotoColorEmoji.ttf /usr/local/share/fonts
 	sudo unzip $currentDir/Agave.zip -d /usr/local/share/fonts
 	rm Agave.zip
-	
+
 	fc-cache
 }
 
