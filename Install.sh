@@ -42,11 +42,14 @@ _installPackages(){
 	done;
 
 	if [[ "${toInstall[@]}" == "" ]]; then
+		echo -e "${GREEN}"
 		echo "All packages already installed";
 		return;
 	fi;
 
+	echo -e "${RED}"
 	printf "Packages not installed: %s \n" "${toInstall[@]}";
+	echo -e "${GREEN}"
 	printf "Proceeding to install %s . . . \n" "${toInstall[@]}" ;
     sudo pacman -S "${toInstall[@]}";
 }
