@@ -3,8 +3,6 @@ clear
 
 configDir="$HOME/.config/"
 dirsPath="$HOME/HyprlandDotfiles/Dotfiles/"
-font1URL="https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/Agave.zip"
-font2URL="https://github.com/googlefonts/noto-emoji/raw/main/fonts/NotoColorEmoji.ttf"
 yayURL="https://aur.archlinux.org/yay.git"
 currentDir=$(pwd)
 
@@ -30,7 +28,7 @@ _isInstalled(){
 #Installs missing packages
 
 _installPackages(){
-
+echo -e "${GREEN}"
 	toInstall=();
 
 	for pkg; do
@@ -130,31 +128,31 @@ _startServices(){
 	echo -e "${WHITE}"
 }
 
-_installFont(){
-	#Downloads AgaveNerdFont with wget	
-	wget $font1URL
-	wget $font2URL
-	condition="$(ls /usr/local/share | grep fonts )" #Checks if fonts folder exists
-
-	if [[ -n "$condition" ]]; then
-		#Unzips the fonts in the folder
-		echo "Fonts folder found"
-		sudo unzip $currentDir/Agave.zip -d /usr/local/share/fonts
-		rm $currentDir/Agave.zip
-		return;
-	fi;
-
-	#Creates the folder and unzips the fonts
-	echo "Fonts folder NOT found, creating font folder at /usr/local/share/"
-	sudo mkdir /usr/local/share/fonts
-
-	#Moves Noto Font to Fonts
-	sudo mv $currentDir/NotoColorEmoji.ttf /usr/local/share/fonts
-	sudo unzip $currentDir/Agave.zip -d /usr/local/share/fonts
-	rm Agave.zip
-
-	fc-cache
-}
+# _installFont(){
+# 	#Downloads AgaveNerdFont with wget	
+# 	wget $font1URL
+# 	wget $font2URL
+# 	condition="$(ls /usr/local/share | grep fonts )" #Checks if fonts folder exists
+# 
+# 	if [[ -n "$condition" ]]; then
+# 		#Unzips the fonts in the folder
+# 		echo "Fonts folder found"
+# 		sudo unzip $currentDir/Agave.zip -d /usr/local/share/fonts
+# 		rm $currentDir/Agave.zip
+# 		return;
+# 	fi;
+# 
+# 	#Creates the folder and unzips the fonts
+# 	echo "Fonts folder NOT found, creating font folder at /usr/local/share/"
+# 	sudo mkdir /usr/local/share/fonts
+# 
+# 	#Moves Noto Font to Fonts
+# 	sudo mv $currentDir/NotoColorEmoji.ttf /usr/local/share/fonts
+# 	sudo unzip $currentDir/Agave.zip -d /usr/local/share/fonts
+# 	rm Agave.zip
+# 
+# 	fc-cache
+# }
 
 _installYay(){
 	git clone $yayURL
@@ -243,6 +241,8 @@ Packages=("hyprland"
 YayPackages=("Hyprshot"
 			 "bluetuith"
 			 "rofimoji"
+			 "ttf-agave-nerd"
+			 "noto-fonts-emoji"
 )
 
 Directories=("alacritty"
