@@ -263,6 +263,10 @@ Services=("ly"
 		  "bluetooth"
 )
 
+#Install yay
+_installYay
+_installPackagesYay
+
 #Synchronize package database
 sudo pacman -Syu
 echo
@@ -271,12 +275,9 @@ echo
 _installPackages "${Packages[@]}"
 echo
 
-_installYay
-_installPackagesYay
-
 #Installs AgaveNerdFont  // IS THE ONLY FONT USED IN THE WHOLE SYSTEM, YOU CAN CHANGE IT BY EDITING THE CONFIG FILE FOR EACH PACKAGE
-_installFont
-echo
+#_installFont
+#echo
 
 #Check for config directories and create them if they dont exist
 _createDirectories "${Directories[@]}"
