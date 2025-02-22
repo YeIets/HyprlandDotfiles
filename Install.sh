@@ -236,6 +236,8 @@ Packages=("hyprland"
 		  "unzip"
 		  "bat"
 		  "macchina"
+		  "zsh"
+		  "zsh-completions"
 )
 
 YayPackages=("Hyprshot"
@@ -308,6 +310,10 @@ else
 	exit 130
 fi
 echo
+
+#Make zsh shell and copy the .zshrc file
+chsh -s /usr/bin/zsh
+cp "${dirsPath}"".zshrc" $HOME
 
 #Asking for confirmation to enable and start services
 echo -e "${RED}"
